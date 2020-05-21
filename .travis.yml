@@ -3,9 +3,9 @@ dist: trusty
 cache: false
 python:
  - "3.6"
- install:
+install: 
  - pip install -e .
  - pip install python-telegram-bot --upgrade
  - git submodule update --init --recursive
- - pip install pygame 
- script: pytest
+ - pip install pygame
+script: pytest
