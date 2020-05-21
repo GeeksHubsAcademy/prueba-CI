@@ -12,7 +12,15 @@ class Snake():
     change = direction
 
     def controller(self, event, pygame):
-        return ""
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                self.change = "RIGHT"
+            if event.key == pygame.K_LEFT:
+                self.change = "LEFT"
+            if event.key == pygame.K_UP:
+                self.change = "UP"
+            if event.key == pygame.K_DOWN:
+                self.change = "DOWN"
 
     def changeDirection(self):
         if self.change == "RIGHT" and self.direction != "LEFT":

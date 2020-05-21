@@ -12,19 +12,21 @@ logger = logging.getLogger(__name__)
 # Definimos algunas funciones para los comandos. Estos generalmente toman los dos argumentos update y context
 def start(update, context):
     """Envia un mensaje cuando se emita el comando /start."""
-    return ""
+    return update.message.reply_text('Hola, Geeks!')
 
 
 def help(update, context):
     """Envia un mensaje cuando se emita el comando /help."""
-    return ""
+    return update.message.reply_text('Ayudame!')
 
 def mayus(update, context):
-    return ""
+        palabra = context.args[0].upper()
+        return update.message.reply_text(palabra)
 
 def alreves(update, context):
     """Repite el mensaje del usuario."""
-    return ""
+    texto = update.message.text[::-1]
+    return update.message.reply_text(texto)
 
 def error(update, context):
     """Envia los errores por consola"""
